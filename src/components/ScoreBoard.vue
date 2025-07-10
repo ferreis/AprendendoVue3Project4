@@ -1,5 +1,6 @@
 <template>
-  <section class="score"> Jogador <span>0</span> x <span>0</span> Computador </section>
+  <section class="score"> Jogador <span v-html="playerPoints"></span> x <span v-html="computerPoints"></span> Computador
+  </section>
 </template>
 
 <script>

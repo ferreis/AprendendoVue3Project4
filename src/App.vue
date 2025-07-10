@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ScoreBoard playerPoints="90" computerPoints="10"></ScoreBoard>
+    <ScoreBoard :playerPoints="this.playerPoints" :computerPoints="this.computerPoints"></ScoreBoard>
     <template v-if="this.answers">
       <h1 v-html="this.question"></h1>
       <template v-for="(answer, index) in this.answers" :key="index">
