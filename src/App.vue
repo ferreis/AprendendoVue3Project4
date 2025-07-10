@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ScoreBoard></ScoreBoard>
+    <ScoreBoard playerPoints="90" computerPoints="10"></ScoreBoard>
     <template v-if="this.answers">
       <h1 v-html="this.question"></h1>
       <template v-for="(answer, index) in this.answers" :key="index">
@@ -45,6 +45,8 @@ export default {
       correctAnswer: undefined,
       chosenAnswer: undefined,
       answerSubmitted: false,
+      playerPoints: 0,
+      computerPoints: 0,
     }
   },
   computed: {
@@ -68,10 +70,9 @@ export default {
       }
       this.answerSubmitted = true;
       if (this.chosenAnswer === this.correctAnswer) {
-        console.log('Certo! +1 ponto para o jogador');
-
+        this.playerPoints++;
       } else {
-        console.log('Errado! +1 ponto para o computador');
+        this.computerPoints++;
       }
     },
     getNewQuestion() {
